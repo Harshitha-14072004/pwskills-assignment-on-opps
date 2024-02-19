@@ -1,0 +1,288 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4d805010-de35-41a9-a66b-225f70f482aa",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q1. Explain Class and Object with respect to Object-Oriented Programming. Give a suitable example."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "00919b90-2a8f-4540-8a54-b3666a3d8b5b",
+   "metadata": {},
+   "source": [
+    "\n",
+    "A class in Python is a blueprint for creating objects, defining their attributes and behaviors. An object is an instance of a class, embodying the characteristics defined by the class. For example, in Python, a class \"Car\" might define attributes like color and speed, while an object of this class could represent a specific car instance with a color of \"red\" and a speed of \"60 mph\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8e9f6b3f-77ba-4075-ab9b-bad57a554304",
+   "metadata": {},
+   "source": [
+    "#Name the four pillars of OOPs."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "2c88175e-120e-4926-96d5-2adc4561f800",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#the pillars are\n",
+    "#1.Encapsulation\n",
+    "# 3.Inheritance\n",
+    "# 4.Polymorphism\n",
+    "# 5.Abstraction"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0885a087-f906-40af-a300-4c4d5d3881d0",
+   "metadata": {},
+   "source": [
+    "#Q3. Explain why the __init__() function is used. Give a suitable example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "0825237d-72fd-44b2-8260-5a5e9c331475",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This car is blue and its model is Toyota.\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Car:\n",
+    "    def __init__(self, color, model):\n",
+    "        self.color, self.model = color, model\n",
+    "\n",
+    "    def display_info(self):\n",
+    "        print(f\"This car is {self.color} and its model is {self.model}.\")\n",
+    "\n",
+    "my_car = Car(\"blue\", \"Toyota\")\n",
+    "my_car.display_info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5f9db4ce-6774-44e5-a3ae-86d1a9c27d42",
+   "metadata": {},
+   "source": [
+    "Q4. Why self is used in OOPs?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa3963b1-db6f-49fd-8cee-e4b9507b5963",
+   "metadata": {},
+   "source": [
+    "In OOP, self is used to refer to the instance of the class within its methods, enabling access to instance variables and methods."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8ceaa8df-d269-4021-a72a-9442dccc8265",
+   "metadata": {},
+   "source": [
+    "Q5. What is inheritance? Give an example for each type of inheritance."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "890116c1-c9a4-4913-9486-55dc2abfba22",
+   "metadata": {},
+   "source": [
+    "1.Single Inheritance:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ddf5c9fe-52be-4743-8f09-86276b33c50e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Animal speaks\n",
+      "Dog barks\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Animal:\n",
+    "    def speak(self):\n",
+    "        print(\"Animal speaks\")\n",
+    "\n",
+    "class Dog(Animal):\n",
+    "    def bark(self):\n",
+    "        print(\"Dog barks\")\n",
+    "\n",
+    "# Example usage\n",
+    "my_dog = Dog()\n",
+    "my_dog.speak()  \n",
+    "my_dog.bark()   \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5a8998a-bb5e-47d6-a89b-3d6027af32c4",
+   "metadata": {},
+   "source": [
+    "2.Multiple Inheritance:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36e61dce-5971-4218-b401-bca0c3ae39b2",
+   "metadata": {},
+   "source": [
+    "class Father:\n",
+    "    def skills(self):\n",
+    "        print(\"Teaching\")\n",
+    "\n",
+    "class Mother:\n",
+    "    def skills(self):\n",
+    "        print(\"Cooking\")\n",
+    "\n",
+    "class Child(Father, Mother):\n",
+    "    pass\n",
+    "\n",
+    "\n",
+    "child = Child()\n",
+    "child.skills()  \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "19e60d27-ab91-4f9a-b1d2-12379380f9e2",
+   "metadata": {},
+   "source": [
+    "3.Multilevel Inheritance:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "918e49fe-8758-4dd4-8149-83089c43ea21",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Wisdom\n",
+      "Life experience\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Grandparent:\n",
+    "    def knowledge(self):\n",
+    "        print(\"Wisdom\")\n",
+    "\n",
+    "class Parent(Grandparent):\n",
+    "    def experience(self):\n",
+    "        print(\"Life experience\")\n",
+    "\n",
+    "class Child(Parent):\n",
+    "    pass\n",
+    "\n",
+    "# Example usage\n",
+    "grandchild = Child()\n",
+    "grandchild.knowledge()   \n",
+    "grandchild.experience()  \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "485c7896-f077-4b0d-ac6c-da9ebeebb39d",
+   "metadata": {},
+   "source": [
+    "4.Hierarchical Inheritance:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "d6dd2960-1076-452c-bf83-478a21b8459c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Animal speaks\n",
+      "Dog barks\n",
+      "Animal speaks\n",
+      "Cat meows\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Animal:\n",
+    "    def speak(self):\n",
+    "        print(\"Animal speaks\")\n",
+    "\n",
+    "class Dog(Animal):\n",
+    "    def bark(self):\n",
+    "        print(\"Dog barks\")\n",
+    "\n",
+    "class Cat(Animal):\n",
+    "    def meow(self):\n",
+    "        print(\"Cat meows\")\n",
+    "\n",
+    "# Example usage\n",
+    "my_dog = Dog()\n",
+    "my_dog.speak()  \n",
+    "my_dog.bark()   \n",
+    "\n",
+    "my_cat = Cat()\n",
+    "my_cat.speak()  \n",
+    "my_cat.meow()   \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2521bce3-d99a-4bb1-9fc4-0faf4cb3ed98",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
